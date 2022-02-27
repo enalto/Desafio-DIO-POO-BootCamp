@@ -1,4 +1,4 @@
-package br.com.enalto.dio;
+package br.com.enalto.dio.dominio;
 
 import java.time.LocalDate;
 

@@ -1,4 +1,4 @@
-package br.com.enalto.dio;
+package br.com.enalto.dio.dominio;
 
 public abstract class AbstractDev {
     protected abstract void inscreverBootcamp();
