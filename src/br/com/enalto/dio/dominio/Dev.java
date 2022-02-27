@@ -9,13 +9,13 @@ public class Dev extends AbstractDev {
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 
     @Override
-    protected void inscreverBootcamp(Bootcamp bootcamp) {
+    public void inscreverBootcamp(Bootcamp bootcamp) {
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
         bootcamp.getDevsInscritos().add(this);
     }
 
     @Override
-    protected void progredir() {
+    public void progredir() {
         Optional<Conteudo> firstConteudo = conteudosInscritos.stream().findFirst();
 
         firstConteudo.ifPresentOrElse(new Consumer<Conteudo>() {
@@ -30,7 +30,7 @@ public class Dev extends AbstractDev {
     }
 
     @Override
-    protected double calcularTotalXP() {
+    public double calcularTotalXP() {
         double sum = conteudosInscritos.stream()
                 .mapToDouble(conteudo -> conteudo.calcular())
                 .sum();
@@ -39,8 +39,8 @@ public class Dev extends AbstractDev {
     }
 
     @Override
-    protected void exibirCursos() {
-
+    public void exibirCursos() {
+        System.out.println(getConteudosInscritos());
     }
 
     public String getNome() {
